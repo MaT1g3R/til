@@ -1,3 +1,5 @@
+The main repository is located at https://gitlab.otonokizaka.moe/Umi/til
+
 * Today I Learned
 
 Collection of small writeups from my daily learning.
