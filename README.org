@@ -7,7 +7,7 @@ Collection of small writeups from my daily learning.
 This document is best edited with emacs [[https://orgmode.org/][org-mode]].
 
 ** Python
-*** Libffi Error
+*** Libffi error
 
 When the underlying system upgrades ~libffi~, and you are using a Python version installed with ~pyenv~, you might run into this error:
 
@@ -29,7 +29,7 @@ pyenv install -f 3.8.1 # or whatever version
 #+end_src
 
 ** Vim
-*** Fix Indentation
+*** Fix indentation
 The shortcut to fix code indentation in vim is ~=~.
 
 You can use visual mode to select a block of code and use ~=~ to fix indentation for that selection.
