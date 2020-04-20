@@ -1,0 +1,21 @@
+* Today I Learned
+
+Collection of small writeups from my daily learning.
+
+This document is best edited with emacs [[https://orgmode.org/][org-mode]].
+
+** Vim
+*** Fix Indentation
+The shortcut to fix code indentation in vim is ~=~.
+
+You can use visual mode to select a block of code and use ~=~ to fix indentation for that selection.
+
+You can also use ~=G~ to fix indentation for every line below the cursor.
+
+[[https://dev.to/ka11away/7-vim-tips-that-changed-my-life-with-demo-51hg][h/t]]
+
+*** Resize windows automatically
+
+~CTRL+w =~
+
+[[https://dev.to/ka11away/7-vim-tips-that-changed-my-life-with-demo-51hg][h/t]]
