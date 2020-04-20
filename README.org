@@ -7,7 +7,7 @@ Collection of small writeups from my daily learning.
 This document is best edited with emacs [[https://orgmode.org/][org-mode]].
 
 ** Python
-*** Libffi error
+*** Libffi Error
 
 When the underlying system upgrades ~libffi~, and you are using a Python version installed with ~pyenv~, you might run into this error:
 
