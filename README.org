@@ -16,7 +16,7 @@ The most useful one is probably ~org-insert-heading-respect-content~, which inse
 [[https://orgmode.org/manual/Structure-Editing.html][h/t]]
 
 ** Python
-*** Libffi error
+*** Fix libffi error
 
 When the underlying system upgrades ~libffi~, and you are using a Python version installed with ~pyenv~, you might run into this error:
 
