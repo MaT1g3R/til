@@ -6,6 +6,15 @@ Collection of small writeups from my daily learning.
 
 This document is best edited with emacs [[https://orgmode.org/][org-mode]].
 
+** Emacs
+*** Insert heading in org-mode
+
+There are commands for inserting a heading below the current line in org-mode, so you don't have to type out the ~*~ yourself.
+
+The most useful one is probably ~org-insert-heading-respect-content~, which inserts a new heading at the end of the current subtree.
+
+[[https://orgmode.org/manual/Structure-Editing.html][h/t]]
+
 ** Python
 *** Libffi error
 
