@@ -37,6 +37,29 @@ The fix is simply recompile your Python:
 pyenv install -f 3.8.1 # or whatever version
 #+end_src
 
+** Scala
+*** Access global build info
+It is often helpful to access global build info in your sbt files.
+
+One might attempt to do something like this:
+
+#+begin_src scala
+val version_ = (version in ThisBuild).value
+
+someTask := // do something with version_
+#+end_src
+
+However, the above doesn't work, to proper way is to do this:
+
+#+begin_src scala
+someTask := {
+    val version_ = (version in ThisBuild).value
+    // do something with version_
+}
+#+end_src
+
+[[https://stackoverflow.com/questions/22538480/passing-value-of-version-in-thisbuild-setting-defined-in-version-sbt-to-artifact][h/t]]
+
 ** Vim
 *** Fix indentation
 The shortcut to fix code indentation in vim is ~=~.
