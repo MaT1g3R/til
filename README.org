@@ -59,7 +59,19 @@ someTask := {
 #+end_src
 
 [[https://stackoverflow.com/questions/22538480/passing-value-of-version-in-thisbuild-setting-defined-in-version-sbt-to-artifact][h/t]]
+*** Select repository based on snapshot
+If you’re using Maven repositories you will also have to select the right repository depending on your artifacts: SNAPSHOT versions go to the /snapshot repository while other versions go to the /releases repository.
+Doing this selection can be done by using the value of the ~isSnapshot~ SettingKey:
 
+#+begin_src scala
+publishTo := {
+  val nexus = "https://my.artifact.repo.net/"
+  if (isSnapshot.value)
+    Some("snapshots" at nexus + "content/repositories/snapshots")
+  else
+    Some("releases"  at nexus + "service/local/staging/deploy/maven2")
+}
+#+end_src
 ** Vim
 *** Fix indentation
 The shortcut to fix code indentation in vim is ~=~.
