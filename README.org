@@ -6,6 +6,24 @@ Collection of small writeups from my daily learning.
 
 This document is best edited with emacs [[https://orgmode.org/][org-mode]].
 
+** Docker
+*** Use Docker buildkit with docker-compose
+Docker has a new build backend called [[https://docs.docker.com/engine/reference/builder/#buildkit][buildkit]], which is an improvement over the original docker build backend.
+
+You can activate it by exporting the ~DOCKER_BUILDKIT~ environment variable like so:
+#+begin_src sh
+export DOCKER_BUILDKIT=1
+#+end_src
+
+This works great with ~docker build~, however it doesn't work with ~docker-compose build~.
+
+You can fix that by exporting one more environment variable like so:
+#+begin_src sh
+export COMPOSE_DOCKER_CLI_BUILD=1
+#+end_src
+
+[[https://stackoverflow.com/questions/58592259/how-do-you-enable-buildkit-with-docker-compose][h/t]]
+
 ** Emacs
 *** Insert heading in org-mode
 
