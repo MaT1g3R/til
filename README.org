@@ -32,6 +32,18 @@ There are commands for inserting a heading below the current line in org-mode, s
 The most useful one is probably ~org-insert-heading-respect-content~, which inserts a new heading at the end of the current subtree.
 
 [[https://orgmode.org/manual/Structure-Editing.html][h/t]]
+** Jenkins
+*** Trigger job with cURL
+
+To trigger a Jenkins job with cURL, you will need to get an API token for your user.
+Go to [[https://JENKINS_URL/user/JENKINS_USER/configure]], then create a new API token under the ~API Token~ section.
+
+Then, to trigger a job, run:
+#+begin_src sh
+curl -X POST https://JENKINS_API_TOKEN@JENKINS_USER:JENKINS_URL/job/JOB_NAME/build
+#+end_src
+
+[[https://stackoverflow.com/questions/34632796/jenkins-trigger-a-job-from-api][h/t]]
 
 ** Python
 *** Fix libffi error
