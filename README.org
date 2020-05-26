@@ -45,6 +45,33 @@ curl -X POST https://JENKINS_API_TOKEN@JENKINS_USER:JENKINS_URL/job/JOB_NAME/bui
 
 [[https://stackoverflow.com/questions/34632796/jenkins-trigger-a-job-from-api][h/t]]
 
+** Kubernetes
+*** Fix HPA resource stuck at syncing in ArgoCD
+Due to a [[https://github.com/kubernetes/kubernetes/issues/74099][bug]] in Kubernetes, HPA resources managed by ArgoCD might be [[https://github.com/argoproj/argo-cd/issues/1079][stuck at syncing forever]].
+
+The fix is to reorder the metrics (placing memory before cpu). For example:
+
+#+begin_src diff
+@@ -48,13 +48,13 @@ autoscaling:
+   metrics:
+     - type: Resource
+       resource:
+-        name: cpu
++        name: memory
+         target:
+           type: Utilization
+           averageUtilization: 60
+     - type: Resource
+       resource:
+-        name: memory
++        name: cpu
+         target:
+           type: Utilization
+           averageUtilization: 60
+#+end_src
+
+[[https://github.com/argoproj/argo-cd/issues/1079#issuecomment-463849329][h/t]]
+
 ** Python
 *** Fix libffi error
 
